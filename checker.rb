@@ -6,8 +6,7 @@ loop do
 
   file = "#{File.dirname(__FILE__)}/logs/#{Time.new.strftime("%Y-%m-%d")}.txt"
   f = File.open(file, "a")
-
-  url = 'http://localhost:8888'
+  url = 'http://'
   url = URI.parse(url)
   req = Net::HTTP::Get.new(url.to_s)
   begin
