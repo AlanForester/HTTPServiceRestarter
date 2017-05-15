@@ -6,7 +6,7 @@ loop do
 
   file = "#{File.dirname(__FILE__)}/logs/#{Time.new.strftime("%Y-%m-%d")}.txt"
   f = File.open(file, "a")
-  url = 'http://'
+  url = 'http://' # Change this for testing
   url = URI.parse(url)
   req = Net::HTTP::Get.new(url.to_s)
   begin
@@ -31,7 +31,7 @@ loop do
   end
 
   if is_error
-    system('service apache2 restart')
+    system('service apache2 restart') # Command for restart service if not responding
     sleep(5)
   end
 
